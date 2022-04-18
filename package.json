@@ -1,5 +1,5 @@
 {
-  "name": "stopwatch",
+  "name": "timer_tabata",
   "version": "1.0.0",
   "description": "This is a pet project for training working with typescript and webpack",
   "main": "index.js",
