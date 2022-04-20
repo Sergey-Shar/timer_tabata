@@ -9,8 +9,10 @@ export const  delay = (ms:number) => {
 
   export const getQuerySelectorAll = (element:string) => document.querySelectorAll(`.${element}`)
 
+  export const getQuerySelector = (element:string) => document.querySelector(`.${element}`)
+
   export const setRemoveClassNameAll = (element:string, id:string, className:string,ms:number) => {
-    document.querySelectorAll(`.${element}`).forEach(i => i.id === id && setRemoveClassName(i, className, ms) )
+    getQuerySelectorAll(element).forEach(i => i.id === id && setRemoveClassName(i, className, ms) )
  }
 
   export const setRemoveClassName = (element: HTMLElement| Element,className:string,ms:number) => {
@@ -23,11 +25,11 @@ export const render = (element:HTMLElement, arg:any) => {
 } 
 
 export const setHandlerClickAll = (element:string,fun:any) => {
-  document.querySelectorAll(`.${element}`)?.forEach(item => item.addEventListener('click',fun))
+  getQuerySelectorAll(element)?.forEach(item => item.addEventListener('click',fun))
     }
 
 export const setHandlerCklick = (element:string,fun:any) => {
-  document.querySelector(`.${element}`)?.addEventListener('click',fun)
+  getQuerySelector(element)?.addEventListener('click',fun)
 }
 
 
