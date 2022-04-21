@@ -1,10 +1,10 @@
-import { render } from "../helpers";
-
-const timerContainer = <HTMLElement>document.querySelector(".timer-container");
+import { getQuerySelector, render } from "../helpers";
+import { setHeader } from "./Header";
 
 
 const createBoxSeting = () => {
-    return `<div class="settings-container">
+    setHeader("настройка")
+    return `<div id="settings" class="settings-container">
     <div class="preparation">
       <div class="box-picker">
         <div class="title-picker">Подготовка</div>
@@ -20,7 +20,7 @@ const createBoxSeting = () => {
         <div class="title-picker">Работа</div>
         <div class="picker">
           <button id="increment-work" data-increment="work" class="increment">&ndash;</button>
-          <div id="workNum" class="number">0</div>
+          <div id="workNum" class="number">1</div>
           <button id="decrement-work" data-decrement="work" class="decrement">+</button>
         </div>
       </div>
@@ -40,7 +40,7 @@ const createBoxSeting = () => {
         <div class="title-picker">Циклы</div>
         <div class="picker">
           <button id="increment-cycles"  data-increment="cycles" class="increment">&ndash;</button>
-          <div id="cyrcleNum" class="number">0</div>
+          <div id="cyrcleNum" class="number">1</div>
           <button id="decrement-cycles" data-decrement="cycles"  class="decrement">+</button>
         </div>
       </div>
@@ -50,7 +50,7 @@ const createBoxSeting = () => {
 };
 
 export const setBoxSeting = () => {
-    render(timerContainer, createBoxSeting())
+    render(getQuerySelector("timer-container"), createBoxSeting())
 }
 
 

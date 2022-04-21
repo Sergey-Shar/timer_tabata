@@ -1,4 +1,6 @@
-import { getDOMElementByid, setRemoveClassName, setRemoveClassNameAll } from "../helpers";
+import { createBoxPreparation } from "../components/BoxPreparation";
+import { finish, preparation, rest, work } from "../components/Timer";
+import { delay, getDOMElementByid, getQuerySelector, removeRender, setRemoveClassName, setRemoveClassNameAll } from "../helpers";
 import { stateSettings } from "../state";
 
 export const incrementHandler = (event: any) => {
@@ -16,10 +18,10 @@ export const incrementHandler = (event: any) => {
     } else if (dataType === "work") {
         setRemoveClassNameAll("increment", "increment-work", "click-active", 100);
 
-        stateSettings.countWork !== 0 &&
+        stateSettings.countWork !== 1 &&
             (getDOMElementByid('workNum').innerText = `${--stateSettings.countWork}`);
 
-        stateSettings.countWork === 0 &&
+        stateSettings.countWork === 1 &&
             setRemoveClassNameAll("number", "workNum", "stop-counter", 1000);
 
     } else if (dataType === "rest") {
@@ -34,10 +36,10 @@ export const incrementHandler = (event: any) => {
     } else if (dataType === "cycles") {
         setRemoveClassNameAll("increment", "increment-cycles", "click-active", 100);
 
-        stateSettings.countCyrcle !== 0 &&
+        stateSettings.countCyrcle !== 1 &&
             (getDOMElementByid('cyrcleNum').innerText = `${--stateSettings.countCyrcle}`);
 
-        stateSettings.countCyrcle === 0 &&
+        stateSettings.countCyrcle === 1 &&
             setRemoveClassNameAll("number", "cyrcleNum", "stop-counter", 1000);
     }
 };
@@ -63,6 +65,32 @@ export const decrementHandler = (event: any) => {
     }
 };
 
+
+const showPraparation = async () => {
+    preparation(stateSettings.countPreparation)
+    await delay(stateSettings.countPreparation * 1000)
+    trainingСycle(training, stateSettings.countCyrcle)
+}
+
+const training = async () => {
+    work(stateSettings.countWork)
+    await delay(stateSettings.countWork * 1000)
+    if (stateSettings.countRest !== 0) {
+        rest(stateSettings.countRest)
+        await delay(stateSettings.countRest * 1000);
+    }
+}
+
+const trainingСycle = (fun: any, count: number) => {
+    return count === 0 ? finish() : fun().then(() => trainingСycle(fun, count - 1))
+}
+
+
+
 export const startTimerHandler = () => {
     setRemoveClassName(getDOMElementByid('btn-start'), 'click-active', 100)
+    stateSettings.countPreparation === 0 ? trainingСycle(training, stateSettings.countCyrcle) :
+        showPraparation()
+
+
 }

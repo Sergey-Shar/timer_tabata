@@ -31,18 +31,27 @@ html {
 
 .screen {
   position: relative;
-  /* display: flex;
-  align-items: center; */
   border-radius: 2.8rem;
   height: 100%;
   width: 100%;
   background-color: #fff;
 }
 
-/* .screen-header{
-  position: absolute;
-  top: 0;
-} */
+.screen.preparation {
+  background-color: green;
+}
+
+.screen.work {
+  background-color: red;
+}
+
+.screen.rest {
+  background-color: rgb(34, 61, 159);
+}
+
+.screen.finish {
+  background-color: yellow;
+}
 
 .clock {
   position: absolute;
@@ -155,7 +164,6 @@ html {
 .line {
   display: block;
   position: relative;
-
 }
 
 .line::after {
@@ -182,10 +190,23 @@ html {
   background-color: rgb(34, 61, 159);
 }
 
+.header.preparation {
+  background-color: green;
+}
+
+.header.work {
+  background-color: red;
+}
+
+.header.rest {
+  background-color: rgb(34, 61, 159);
+}
+
 .title {
   margin-top: 2rem;
-  font-size: 1.6rem;
+  font-size: 3rem;
   color: #fff;
+  letter-spacing: 0.2rem;
 }
 
 .timer-container {
@@ -241,7 +262,6 @@ html {
   transform: scale(1.2);
   background-color: rgb(68, 98, 208);
   font-size: 2.5rem;
-
 }
 
 .decrement {
@@ -260,7 +280,6 @@ html {
   transform: scale(1.2);
   background-color: rgb(68, 98, 208);
   font-size: 2.5rem;
-
 }
 
 .start-button {
@@ -287,5 +306,30 @@ html {
 .number.stop-counter {
   transform: scale(1.5);
   transition-duration: 1s;
-  color: red
+  color: red;
+}
+
+.box-preparation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.preparation-counter {
+  flex: 10;
+  font-size: 15rem;
+  color: #fff;
+}
+
+.preparation-counter.finish {
+  color: blue;
+  margin-top: 5rem;
+  font-size: 3rem;
+}
+
+.footer {
+  height: 10rem;
+  width: 100%;
 }
