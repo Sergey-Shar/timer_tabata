@@ -1,6 +1,5 @@
-import { createBoxPreparation } from "../components/BoxPreparation";
 import { finish, preparation, rest, work } from "../components/Timer";
-import { delay, getDOMElementByid, getQuerySelector, removeRender, setRemoveClassName, setRemoveClassNameAll } from "../helpers";
+import { delay, getDOMElementByid, setRemoveClassName, setRemoveClassNameAll } from "../helpers";
 import { stateSettings } from "../state";
 
 export const incrementHandler = (event: any) => {
@@ -65,7 +64,6 @@ export const decrementHandler = (event: any) => {
     }
 };
 
-
 const showPraparation = async () => {
     preparation(stateSettings.countPreparation)
     await delay(stateSettings.countPreparation * 1000)
@@ -85,12 +83,17 @@ const trainingСycle = (fun: any, count: number) => {
     return count === 0 ? finish() : fun().then(() => trainingСycle(fun, count - 1))
 }
 
-
+export const footerBtnHandler = () => {
+    location.href = location.href
+}
 
 export const startTimerHandler = () => {
     setRemoveClassName(getDOMElementByid('btn-start'), 'click-active', 100)
     stateSettings.countPreparation === 0 ? trainingСycle(training, stateSettings.countCyrcle) :
-        showPraparation()
-
-
+    showPraparation()
 }
+
+
+
+
+

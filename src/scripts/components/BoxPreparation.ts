@@ -6,7 +6,7 @@ export const createBoxPreparation = (title: string, counter: number | string, cl
   return ` <div id="box-timer" class="box-preparation">
             <div id="preparation-counter" class="preparation-counter ${className}">${counter}</div>
             <div class="footer">
-            dhasdkjfhdskjfhdfskjfghsdfkjgh
+            <button id="reset-timer" class="reset-btn ${className}">сброс</button>
             </div>
             </div>`
 }

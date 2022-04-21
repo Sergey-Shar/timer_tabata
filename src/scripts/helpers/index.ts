@@ -33,8 +33,8 @@ export const setHandlerClickAll = (element: string, fun: any) => {
   getQuerySelectorAll(element)?.forEach(item => item.addEventListener('click', fun))
 }
 
-export const setHandlerCklick = (element: string, fun: any) => {
-  getQuerySelector(element)?.addEventListener('click', fun)
+export const setHandlerClick = (element: string, fun: any) => {
+  getDOMElementByid(element)?.addEventListener('click', fun)
 }
 
 

@@ -3,7 +3,7 @@ import { setHeader } from "./Header";
 
 
 const createBoxSeting = () => {
-    setHeader("настройка")
+    setHeader("Настройка")
     return `<div id="settings" class="settings-container">
     <div class="preparation">
       <div class="box-picker">
