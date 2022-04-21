@@ -1,5 +1,5 @@
 import { decrementHandler, incrementHandler, startTimerHandler } from "../eventhandlers";
-import { setHandlerCklick, setHandlerClickAll } from "../helpers";
+import { setHandlerClick, setHandlerClickAll } from "../helpers";
 import { setBoxSeting } from "./BoxSeting";
 import { setScreenClock } from "./ScreenClock"
 
@@ -8,7 +8,7 @@ export const App = () => {
     setBoxSeting()
     setHandlerClickAll("increment", incrementHandler)
     setHandlerClickAll("decrement", decrementHandler)
-    setHandlerCklick('start-button', startTimerHandler)
+    setHandlerClick('btn-start', startTimerHandler)
 
 }
 

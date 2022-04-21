@@ -1,24 +1,25 @@
+import { footerBtnHandler } from "../eventhandlers";
 import {
-  delay,
   getDOMElementByid,
   getQuerySelector,
-  removeRender,
+  setHandlerClick,
   setRemoveClassName,
 } from "../helpers";
 import { createBoxPreparation } from "./BoxPreparation";
-import { setBoxSeting } from "./BoxSeting";
 
-let counter: any = null;
+export let counter: any = null;
 
 export const preparation = (count: number) => {
   setRemoveClassName(getDOMElementByid("screen"), "preparation", count * 1000);
   setRemoveClassName(getDOMElementByid("header"), "preparation", count * 1000);
 
   getQuerySelector("timer-container").innerHTML = createBoxPreparation(
-    "подготовка",
+    "Подготовка",
     count,
     ""
   );
+
+  setHandlerClick('reset-timer', footerBtnHandler)
   counter = setInterval(
     () => (getQuerySelector("preparation-counter").innerText = `${--count}`),
     1000
@@ -31,10 +32,12 @@ export const work = (count: number) => {
 
   clearInterval(counter);
   getQuerySelector("timer-container").innerHTML = createBoxPreparation(
-    "работа",
+    "Работа",
     count,
     ""
   );
+  setHandlerClick('reset-timer', footerBtnHandler)
+
   counter = setInterval(
     () => (getQuerySelector("preparation-counter").innerText = `${--count}`),
     1000
@@ -47,10 +50,12 @@ export const rest = (count: number) => {
 
   clearInterval(counter);
   getQuerySelector("timer-container").innerHTML = createBoxPreparation(
-    "отдых",
+    "Отдых",
     count,
     ""
   );
+  setHandlerClick('reset-timer', footerBtnHandler)
+
   counter = setInterval(
     () => (getQuerySelector("preparation-counter").innerText = `${--count}`),
     1000
@@ -60,10 +65,11 @@ export const rest = (count: number) => {
 export const finish = () => {
   clearInterval(counter);
   getQuerySelector("timer-container").innerHTML = createBoxPreparation(
-    "финиш",
-    "ура,победа!",
+    "Финиш",
+    "Ура, победа!",
     "finish"
   );
-  setRemoveClassName(getDOMElementByid("screen"), "finish", 5000);
-  delay(5000).then(setBoxSeting);
+  getQuerySelector("reset-btn").innerText = "настройки";
+  getDOMElementByid("screen").classList.add("finish");
+  setHandlerClick("reset-timer", footerBtnHandler);
 };

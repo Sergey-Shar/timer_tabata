@@ -203,10 +203,11 @@ html {
 }
 
 .title {
-  margin-top: 2rem;
-  font-size: 3rem;
+  margin-top: 3rem;
+  font-size: 2.7rem;
   color: #fff;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
+  font-weight: 100
 }
 
 .timer-container {
@@ -241,7 +242,7 @@ html {
 }
 
 .title-picker {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
@@ -284,6 +285,7 @@ html {
 
 .start-button {
   transition-duration: 0.1s;
+  font-size: 2rem;
   margin-top: 1rem;
   height: 50%;
   border: none;
@@ -325,11 +327,31 @@ html {
 
 .preparation-counter.finish {
   color: blue;
-  margin-top: 5rem;
+  margin-top: 8rem;
   font-size: 3rem;
 }
 
 .footer {
+  display: flex;
+  justify-content: center;
   height: 10rem;
   width: 100%;
+}
+
+.reset-btn {
+  transition-duration: 0.1s;
+  font-size: 2rem;
+  margin-top: 4rem;
+  height: 50%;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.reset-btn.finish {
+  color: #fff;
+  transition-duration: 0.1s;
+  background-color: rgb(34, 61, 159);
 }
