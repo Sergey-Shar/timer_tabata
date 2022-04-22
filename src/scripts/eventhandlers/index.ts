@@ -64,13 +64,13 @@ export const decrementHandler = (event: any) => {
     }
 };
 
-const showPraparation = async () => {
+const showPraparation = async ():Promise<void> => {
     preparation(stateSettings.countPreparation)
     await delay(stateSettings.countPreparation * 1000)
     trainingСycle(training, stateSettings.countCyrcle)
 }
 
-const training = async () => {
+const training = async ():Promise<void> => {
     work(stateSettings.countWork)
     await delay(stateSettings.countWork * 1000)
     if (stateSettings.countRest !== 0) {
@@ -79,7 +79,7 @@ const training = async () => {
     }
 }
 
-const trainingСycle = (fun: any, count: number) => {
+const trainingСycle = (fun: Function, count: number) => {
     return count === 0 ? finish() : fun().then(() => trainingСycle(fun, count - 1))
 }
 

@@ -29,11 +29,11 @@ export const removeRender = (element: string) => {
   getDOMElementByid(element).remove()
 }
 
-export const setHandlerClickAll = (element: string, fun: any) => {
+export const setHandlerClickAll = (element: string, fun: EventListenerOrEventListenerObject) => {
   getQuerySelectorAll(element)?.forEach(item => item.addEventListener('click', fun))
 }
 
-export const setHandlerClick = (element: string, fun: any) => {
+export const setHandlerClick = (element: string, fun: EventListenerOrEventListenerObject) => {
   getDOMElementByid(element)?.addEventListener('click', fun)
 }
 
