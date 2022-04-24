@@ -18,7 +18,11 @@ The idea of this work came to me just during a training session on the Tabata pr
 
 - [CSS3](https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics)
 
+- [Firebase](https://firebase.google.com/)
+
 - [Webpack](https://webpack.js.org/)
+
+- [Eslint](https://eslint.org/)
 
 - [FontAwesome](https://fontawesome.com/)
 
@@ -27,9 +31,9 @@ The idea of this work came to me just during a training session on the Tabata pr
 With the help of [Firebase](https://firebase.google.com/) hosting, the deployment of the project is implemented and by following [this](https://tabata-timer-app-932a8.web.app/) link you can see how the application works in the browser
 
 
-Checking for HTML [validatorW3](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftabata-timer-app-932a8.web.app%2F )
+Checking for HTML  [validatorW3](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftabata-timer-app-932a8.web.app%2F )
 
-Performance check[PageSpeed Insights](https://pagespeed.web.dev/report?url=https%3A%2F%2Ftabata-timer-app-932a8.web.app%2F&form_factor=desktop)
+Performance check  [PageSpeed Insights](https://pagespeed.web.dev/report?url=https%3A%2F%2Ftabata-timer-app-932a8.web.app%2F&form_factor=desktop)
 
 
 Quick start:
