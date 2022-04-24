@@ -1,6 +1,6 @@
-import { render } from "../helpers";
+import { render } from '../helpers';
 
-const clock = <HTMLElement>document.querySelector(".clock");
+const clock = <HTMLElement>document.querySelector('.clock');
 
 function getCurrentTime(): string {
   return new Date().toLocaleTimeString().slice(0, -3);

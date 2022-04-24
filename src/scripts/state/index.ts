@@ -7,10 +7,10 @@ interface StateSettingValue {
     countCyrcle: number
 }
 export const stateSettings: StateSettingValue = {
-    isShowSetting: true,
-    countPreparation: 0,
-    countWork: 1,
-    countRest: 0,
-    countCyrcle: 1
-}
+  isShowSetting: true,
+  countPreparation: 0,
+  countWork: 1,
+  countRest: 0,
+  countCyrcle: 1,
+};
 

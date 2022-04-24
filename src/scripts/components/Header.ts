@@ -1,11 +1,11 @@
-import { render } from "../helpers";
+import { render } from '../helpers';
 
-const header = <HTMLElement>document.querySelector(".header");
+const header = <HTMLElement>document.querySelector('.header');
 
 const createHeaderTitle = (title:string):string => {
-    return `<div class="title">${title}</div>`
-}
+  return `<div class="title">${title}</div>`;
+};
 
 export const setHeader = (title:string) => {
-render(header, createHeaderTitle(title))
-}
+  render(header, createHeaderTitle(title));
+};
