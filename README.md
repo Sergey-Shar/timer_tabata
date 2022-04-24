@@ -12,13 +12,13 @@ The idea of this work came to me just during a training session on the Tabata pr
 
 ### I also wanted to work without the help of frameworks and libraries, so I used the following tools to implement the idea:
 
+- [TypeScript](https://www.typescriptlang.org/)
+
 - [HTML5](https://www.w3.org/TR/2011/WD-html5-20110405/)
 
 - [CSS3](https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics)
 
-- [TypeScript](https://www.typescriptlang.org/)
-
-- [WebPack](https://webpack.js.org/)
+- [Webpack](https://webpack.js.org/)
 
 - [FontAwesome](https://fontawesome.com/)
 
